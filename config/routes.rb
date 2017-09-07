@@ -68,7 +68,8 @@ Spina::Engine.routes.draw do
   get '/robots', to: 'pages#robots', constraints: { format: 'txt' }
 
   unless Spina.config.disable_frontend_routes
-    # Frontend
+    # Frontend'
+    prefix = Spina.api_mode ? "api" : ""
     root to: "pages#homepage"
 
     # Pages
